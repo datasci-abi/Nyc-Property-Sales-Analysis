@@ -1,68 +1,63 @@
 NYC Property Sales Price Prediction
 Overview
-This project aims to predict the sale prices of properties in New York City using machine learning models such as Linear Regression and XGBoost. The dataset used is the NYC Citywide Rolling Calendar Sales dataset. The project focuses on cleaning the data, exploring it through visualizations, training machine learning models, and evaluating their performance using various metrics.
+This project focuses on predicting property sale prices in New York City using machine learning models like Linear Regression and XGBoost. The data comes from the NYC Citywide Rolling Calendar Sales dataset. The project involves cleaning the data, building models, and evaluating their performance.
 
 Dataset
-The dataset contains information about property sales in NYC, with features like:
+The dataset contains information about property sales, with features like:
 
-NEIGHBORHOOD
-BUILDING CLASS CATEGORY
-TAX CLASS AT TIME OF SALE
-BUILDING CLASS AT TIME OF SALE
-LAND SQUARE FEET
-GROSS SQUARE FEET
-YEAR BUILT
-SALE PRICE
-Project Steps
+Neighborhood
+Building Class
+Land Square Feet
+Gross Square Feet
+Year Built
+Sale Price
+Key Steps
 1. Data Preprocessing
-Cleaning the Data: Remove rows with missing values in relevant columns and convert numerical columns (e.g., LAND SQUARE FEET, GROSS SQUARE FEET) to numeric format.
-Categorical and Numerical Features: Preprocess the data using pipelines for numerical (e.g., scaling, imputing) and categorical features (e.g., one-hot encoding).
-2. Exploratory Data Analysis
-Distribution Plot: Visualized the distribution of SALE PRICE.
-Scatter Plot: Explored the relationship between GROSS SQUARE FEET and SALE PRICE.
+Clean the data by removing rows with missing values.
+Convert text-based numbers (e.g., "1,000") to numeric format.
+Use pipelines to process numerical and categorical data.
+2. Data Visualization
+Histogram: Shows the distribution of Sale Price.
+Scatter Plot: Explores the relationship between Gross Square Feet and Sale Price.
 3. Model Training
-Linear Regression: Fit a baseline linear regression model.
-XGBoost Regressor: Fit a more advanced XGBoost model for better prediction accuracy.
+Linear Regression: Trained as a simple baseline model.
+XGBoost: Trained to improve prediction accuracy.
 4. Model Evaluation
-Metrics: Evaluated models using MAE (Mean Absolute Error), RMSE (Root Mean Squared Error), and R² score.
-Linear Regression: MAE, RMSE, and R² scores.
-XGBoost: Improved MAE, RMSE, and R² compared to the baseline model.
+MAE (Mean Absolute Error)
+RMSE (Root Mean Squared Error)
+R² Score: Measures how well the model explains the variance in the data.
 5. Feature Importance
-Permutation Importance: Identified the most important features contributing to the prediction of SALE PRICE.
-6. Partial Dependence and SHAP Analysis
-Partial Dependence Plots (PDP): Visualized how features like GROSS SQUARE FEET affect the predictions.
-SHAP (SHapley Additive exPlanations): Analyzed individual predictions using SHAP force plots and visualized global feature importance using SHAP summary plots.
+Permutation Importance: Identified which features impact the model the most.
+6. SHAP Analysis
+Used SHAP (SHapley Additive exPlanations) to explain individual predictions and understand global feature importance.
 Results
-Linear Regression Performance:
+Linear Regression:
 
-MAE: 1,220,872.68
-RMSE: 7,550,324.91
+MAE: 1,220,872
+RMSE: 7,550,325
 R²: 0.07
-XGBoost Performance:
+XGBoost:
 
-MAE: 1,112,774.29
-RMSE: 7,552,392.61
+MAE: 1,112,774
+RMSE: 7,552,393
 R²: 0.07
+XGBoost performed slightly better than Linear Regression.
+
 Visualizations
-Partial Dependence Plot: Visualized the effect of GROSS SQUARE FEET and LAND SQUARE FEET on predictions.
-SHAP Visualizations:
-Force plots for individual predictions.
-SHAP summary and dependence plots for feature analysis.
-Files
-final_xgb_model.pkl: Trained XGBoost model.
-SHAP plots: Force plots and summary plots showing feature importance and individual prediction explanations.
+Partial Dependence Plot (PDP): Shows how features like Gross Square Feet affect predictions.
+SHAP Plots: Visualize feature importance and how individual predictions are made.
+How to Run
+Preprocess the dataset.
+Train models (Linear Regression and XGBoost).
+Evaluate the models using MAE, RMSE, and R².
+Analyze feature importance using SHAP.
 Requirements
-Install the following Python libraries:
+Install the following libraries:
 
 bash
 Copy code
 pip install pandas matplotlib scikit-learn xgboost shap pdpbox joblib
-How to Run
-Preprocess the dataset and split it into training and test sets.
-Train models such as Linear Regression and XGBoost.
-Evaluate the model using metrics like MAE, RMSE, and R².
-Analyze feature importance with SHAP and permutation importance.
 Conclusion
-This project demonstrates how to predict NYC property sale prices using machine learning models. The XGBoost model outperformed the Linear Regression baseline, and feature analysis showed that GROSS SQUARE FEET and LAND SQUARE FEET play important roles in determining property prices.
+This project demonstrates how machine learning models can predict NYC property prices. XGBoost performed better than Linear Regression, and feature analysis revealed the importance of Gross Square Feet and Land Square Feet in predicting sale prices.
 
-Feel free to explore the code and improve the models for better performance!
+Feel free to explore and improve the project!
